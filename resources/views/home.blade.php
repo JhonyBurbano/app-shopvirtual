@@ -37,9 +37,9 @@
             <div class="tab-content tab-space">
                 <div class="tab-pane active" id="dashboard-1">
                     @php
-                        $count = auth()->user()->cart->details->count();
+                        //$count = auth()->user()->cart->details->count();
                     @endphp
-                    <p>Tu carrito de compras presenta {{ $count }} {{ $count === 1 ? "producto" : "productos" }}.</p>
+                    {{-- <p>Tu carrito de compras presenta {{ $count }} {{ $count === 1 ? "producto" : "productos" }}.</p>
                     <table class="table table-condenced">
                         <thead>
                             <tr>
@@ -80,7 +80,7 @@
                         <button type="submit" class="btn btn-primary btn-round">
                           <i class="material-icons">done</i> Realizar Pedido
                         </button>
-                    {!! Form::close() !!}
+                    {!! Form::close() !!} --}}
                 </div>
                 <div class="tab-pane" id="tasks-1">
                     Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.

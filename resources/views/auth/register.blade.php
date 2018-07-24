@@ -3,6 +3,7 @@
 @section('body-class', 'signup-page sidebar-collapse')
 
 @section('content')
+
 <div class="page-header header-filter" filter-color="purple" style="background-image: url('{{ asset('img/bg7.jpg') }}')">
     <div class="container">
         <div class="row">
@@ -13,15 +14,6 @@
                       <div class="row">
                           <div class="col-md-12 mr-auto">
                               <div class="social text-center">
-                                  {{-- <button class="btn btn-just-icon btn-round btn-twitter">
-                                    <i class="fa fa-twitter"></i>
-                                  </button>
-                                  <button class="btn btn-just-icon btn-round btn-dribbble">
-                                    <i class="fa fa-dribbble"></i>
-                                  </button>
-                                  <button class="btn btn-just-icon btn-round btn-facebook">
-                                    <i class="fa fa-facebook"> </i>
-                                  </button> --}}
                                   <h4> Ingresar Datos</h4>
                               </div>
                               <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
@@ -102,4 +94,5 @@
     @include('includes.footer')
     
 </div>
+
 @endsection

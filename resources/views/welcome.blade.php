@@ -65,7 +65,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h1 class="title">Bienvenido a nuestra tienda JENPAT.</h1>
-                <h4>Realiza pedidos en linea y te contactaremos para coordina la entrega.</h4>
+                <h4>Realiza pedidos en linea y te contactaremos para coordinar la entrega.</h4>
                 <br>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
                   <i class="fa fa-play"></i> ¿Cómo funciona?
