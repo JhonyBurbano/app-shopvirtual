@@ -13,7 +13,7 @@ class CreateProductosImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos_images', function (Blueprint $table) {
+        Schema::create('producto_images', function (Blueprint $table) {
             $table->increments('id');
 
             $table->unsignedInteger('producto_id');
