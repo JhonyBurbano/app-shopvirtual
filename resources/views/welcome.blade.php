@@ -1,95 +1,203 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('body-class', 'landing-page sidebar-collapse')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('styles')
+    <style>
+        .team .row .col-md-4{
+            margin-bottom: 5em
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+        .row {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .row > [class='col-'] {
+            display: flex;
+            flex-direction: column; 
+        }
 
-            .full-height {
-                height: 100vh;
-            }
+        .tt-query, /* UPDATE: newer versions use tt-input instead of tt-query */
+.tt-hint {
+    width: 396px;
+    height: 30px;
+    padding: 8px 12px;
+    font-size: 24px;
+    line-height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+.tt-query { /* UPDATE: newer versions use tt-input instead of tt-query */
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
 
-            .position-ref {
-                position: relative;
-            }
+.tt-hint {
+    color: #999;
+}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+.tt-menu { /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
+    width: 422px;
+    margin-top: 12px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
 
-            .content {
-                text-align: center;
-            }
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+    </style>
+@endsection
 
-            .title {
-                font-size: 84px;
-            }
+@section('content')
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{ asset('img/profile_city.jpg') }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="title">Bienvenido a nuestra tienda JENPAT.</h1>
+                <h4>Realiza pedidos en linea y te contactaremos para coordina la entrega.</h4>
+                <br>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
+                  <i class="fa fa-play"></i> ¿Cómo funciona?
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised">
+    <div class="container">
+        <div class="section text-center">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title">Let&apos;s talk product</h2>
+                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div>
+            <div class="features">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info">
+                            <div class="icon icon-info">
+                                <i class="material-icons">chat</i>
+                            </div>
+                            <h4 class="info-title">Free Chat</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info">
+                            <div class="icon icon-success">
+                                <i class="material-icons">verified_user</i>
+                            </div>
+                            <h4 class="info-title">Verified Users</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="material-icons">fingerprint</i>
+                            </div>
+                            <h4 class="info-title">Fingerprint</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="section text-center">
+            <h2 class="title">PRODUCTOS DISPONIBLES</h2>
+            {!! Form::open(['url' => 'comun/search', 'class' => 'form-inline']) !!}
+                {!! Form::text('query', null, ['class' => 'form-control', 'placeholder' => 'Qué producto buscas?', 'id' => 'search']) !!}
+                <button type="submit" rel="tooltip" title="Búsqueda de producto" class="btn btn-info btn-fab">
+                    <i class="material-icons">search</i>
+                </button>
+            {!! Form::close() !!}
+            <div class="team">
+                {{-- <div class="row">
+                    @foreach($productos as $producto)
+                      <div class="col-md-4">
+                            <div class="card">
+                              <div class="card-header card-header-info">
+                                <img src="{{ $producto->imagen_url }}" alt="Thumbnail Image" class="img-raised img-fluid rounded" width="250px" height="200px">
+                                <h4 class="card-title"><a href="{{ url('comun/productos/' . $producto->id) }}">{{ $producto->nombre }}</a></h4>
+                                <p class="category"><a href="{{ url('comun/categorias', $producto->categoria_id) }}">{{ $producto->categoria_nombre }}</a></p>
+                              </div>
+                              <div class="card-body">
+                                {{ $producto->descripcion }}<br>
+                                <small class="card-description text-muted h4">$ {{ number_format($producto->precio,'0','.','.') }}&nbsp;&nbsp;-&nbsp;&nbsp;Contado</small>
+                              </div>
+                            </div>
+                          <div class="team-player">
+                              <div class="card card-plain">
+                                  <div class="col-md-6 ml-auto mr-auto">
+                                      <img src="{{ $producto->imagen_url }}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid" width="290px" height="218px">
+                                  </div>
+                                  <h4 class="card-title"><a href="{{ url('comun/productos/' . $producto->id) }}">{{ $producto->nombre }}</a>
+                                    <br>
+                                    <small class="card-description text-muted">{{ $producto->categoria ? $producto->categoria->nombre : 'General' }}</small>
+                                  </h4>
+                                  <div class="card-body">
+                                      <p class="card-description">{{ $producto->descripcion }}</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="text-center">
+                {{ $productos->links() }}
+            </div> --}}
+        </div>
+        <div class="section section-contacts">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="text-center title">Work with us</h2>
+                    <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Your Name</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Your Email</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleMessage" class="bmd-label-floating">Your Message</label>
+                            <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ml-auto mr-auto text-center">
+                                <button class="btn btn-primary btn-raised">
+                                  Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@include('includes.footer')
+
+
+@endsection
