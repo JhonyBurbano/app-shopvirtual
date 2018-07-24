@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'WelcomeController@welcome');
+Route::get('/productos/{id_producto}', 'ProductosController@show');
 
 Auth::routes();
 

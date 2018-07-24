@@ -77,52 +77,25 @@
 <div class="main main-raised">
     <div class="container">
         <div class="section text-center">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">Let&apos;s talk product</h2>
-                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
-                </div>
-            </div>
-            <div class="features">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="info">
-                            <div class="icon icon-info">
-                                <i class="material-icons">chat</i>
-                            </div>
-                            <h4 class="info-title">Free Chat</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info">
-                            <div class="icon icon-success">
-                                <i class="material-icons">verified_user</i>
-                            </div>
-                            <h4 class="info-title">Verified Users</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info">
-                            <div class="icon icon-danger">
-                                <i class="material-icons">fingerprint</i>
-                            </div>
-                            <h4 class="info-title">Fingerprint</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section text-center">
             <h2 class="title">PRODUCTOS DISPONIBLES</h2>
-            {!! Form::open(['url' => 'comun/search', 'class' => 'form-inline']) !!}
-                {!! Form::text('query', null, ['class' => 'form-control', 'placeholder' => 'Qué producto buscas?', 'id' => 'search']) !!}
-                <button type="submit" rel="tooltip" title="Búsqueda de producto" class="btn btn-info btn-fab">
-                    <i class="material-icons">search</i>
-                </button>
-            {!! Form::close() !!}
+                    {!! Form::open(['url' => '/', 'class' => 'form-inline', 'method' => 'GET']) !!}
+                        <div class="row text-center">
+                            <div class="col">
+                                <div class="form-group">
+                                    {!! Form::select('categoria_id', $categorias, null, ['class'=>'form-control', 'placeholder'=>'Seleccione Categoria ...', 'value' => old('categoria_id')]) !!}
+                                </div>
+                            </div>
+                            <div class="col">
+                                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar por nombre de producto?', 'id' => 'search']) !!}
+                            </div>
+                            <div class="col">
+                                <button type="submit" rel="tooltip" title="Búsqueda" class="btn btn-info btn-fab">
+                            <i class="material-icons">search</i>
+                        </button>
+                            </div>
+                        </div>    
+                        
+                    {!! Form::close() !!}
             <div class="team">
                 <div class="row">
                     @foreach($productos as $producto)
@@ -130,8 +103,8 @@
                             <div class="card">
                                   <div class="card-header card-header-info">
                                     <img src="{{ $producto->imagen_url }}" alt="Thumbnail Image" class="img-raised img-fluid rounded" width="250px" height="200px">
-                                    <h4 class="card-title"><a href="{{ url('comun/productos/' . $producto->id) }}">{{ $producto->nombre }}</a></h4>
-                                    <p class="category"><a href="{{ url('comun/categorias', $producto->categoria_id) }}">{{ $producto->categoria_nombre }}</a></p>
+                                    <h4 class="card-title"><a href="{{ url('/productos/' . $producto->id) }}">{{ $producto->nombre }}</a></h4>
+                                    <p class="category">{{ $producto->categoria_nombre }}</p>
                                   </div>
                                   <div class="card-body">
                                     {{ $producto->descripcion }}<br>
