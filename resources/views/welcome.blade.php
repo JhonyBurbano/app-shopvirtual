@@ -124,41 +124,27 @@
                 </button>
             {!! Form::close() !!}
             <div class="team">
-                {{-- <div class="row">
+                <div class="row">
                     @foreach($productos as $producto)
                       <div class="col-md-4">
                             <div class="card">
-                              <div class="card-header card-header-info">
-                                <img src="{{ $producto->imagen_url }}" alt="Thumbnail Image" class="img-raised img-fluid rounded" width="250px" height="200px">
-                                <h4 class="card-title"><a href="{{ url('comun/productos/' . $producto->id) }}">{{ $producto->nombre }}</a></h4>
-                                <p class="category"><a href="{{ url('comun/categorias', $producto->categoria_id) }}">{{ $producto->categoria_nombre }}</a></p>
-                              </div>
-                              <div class="card-body">
-                                {{ $producto->descripcion }}<br>
-                                <small class="card-description text-muted h4">$ {{ number_format($producto->precio,'0','.','.') }}&nbsp;&nbsp;-&nbsp;&nbsp;Contado</small>
-                              </div>
-                            </div>
-                          <div class="team-player">
-                              <div class="card card-plain">
-                                  <div class="col-md-6 ml-auto mr-auto">
-                                      <img src="{{ $producto->imagen_url }}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid" width="290px" height="218px">
+                                  <div class="card-header card-header-info">
+                                    <img src="{{ $producto->imagen_url }}" alt="Thumbnail Image" class="img-raised img-fluid rounded" width="250px" height="200px">
+                                    <h4 class="card-title"><a href="{{ url('comun/productos/' . $producto->id) }}">{{ $producto->nombre }}</a></h4>
+                                    <p class="category"><a href="{{ url('comun/categorias', $producto->categoria_id) }}">{{ $producto->categoria_nombre }}</a></p>
                                   </div>
-                                  <h4 class="card-title"><a href="{{ url('comun/productos/' . $producto->id) }}">{{ $producto->nombre }}</a>
-                                    <br>
-                                    <small class="card-description text-muted">{{ $producto->categoria ? $producto->categoria->nombre : 'General' }}</small>
-                                  </h4>
                                   <div class="card-body">
-                                      <p class="card-description">{{ $producto->descripcion }}</p>
+                                    {{ $producto->descripcion }}<br>
+                                    <small class="card-description text-muted h4">$ {{ number_format($producto->precio,'0','.','.') }}&nbsp;&nbsp;-&nbsp;&nbsp;Contado</small>
                                   </div>
-                              </div>
-                          </div>
+                            </div>
                       </div>
                     @endforeach
                 </div>
             </div>
             <div class="text-center">
                 {{ $productos->links() }}
-            </div> --}}
+            </div>
         </div>
         <div class="section section-contacts">
             <div class="row">

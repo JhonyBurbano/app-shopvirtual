@@ -17,4 +17,18 @@ class Producto extends Model
     {
     	return $this->hasMany(ProductoImage::class);
     }
+
+    public function getImagenUrlAttribute()
+    {
+        $destacadaImagen = $this->images()->where('destacada', true)->first();
+        if (!$destacadaImagen) {
+            $destacadaImagen = $this->images()->first();
+        }
+
+        if ($destacadaImagen) {
+            return $destacadaImagen->image;
+        }
+
+        return '/images/productos/default.png';
+    }
 }
